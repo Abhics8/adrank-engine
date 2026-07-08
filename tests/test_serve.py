@@ -27,7 +27,7 @@ def client(tmp_path_factory):
     os.chdir(run_dir)
     train_main()
 
-    os.environ["ADRANK_RUN_DIR"] = str(run_dir / "models" / "test")
+    os.environ["YIELDGUARD_RUN_DIR"] = str(run_dir / "models" / "test")
     from src.serve.app import app
 
     # TestClient only fires FastAPI's startup event (which loads artifacts

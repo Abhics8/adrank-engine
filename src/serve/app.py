@@ -26,10 +26,10 @@ from starlette.responses import Response
 from src.features.pipeline import FEATURE_COLS, HASH_BUCKETS
 from src.serve.artifacts import Artifacts, load_artifacts
 
-RUN_DIR = os.environ.get("ADRANK_RUN_DIR", "models/latest")
+RUN_DIR = os.environ.get("YIELDGUARD_RUN_DIR", "models/latest")
 
 stage_latency = Histogram(
-    "adrank_stage_latency_seconds", "Latency per serving stage", ["stage"]
+    "yieldguard_stage_latency_seconds", "Latency per serving stage", ["stage"]
 )
 
 _artifacts: Artifacts | None = None

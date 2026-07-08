@@ -1,8 +1,10 @@
-# adrank-engine
+# YieldGuard
 
 A two-stage ad ranking system: two-tower retrieval, a GBDT reranker, isotonic
 calibration, and a toy second-price auction — with an offline evaluation
-harness that reproduces every number below from one command.
+harness that reproduces every number below from one command. The name is
+the point: an uncalibrated model quietly erodes yield (see the auction
+simulation below), and this pipeline exists to catch that before it ships.
 
 ```
 python -m src.eval.run --config configs/gbdt.yaml
@@ -157,7 +159,7 @@ pip install -r requirements.txt
 pytest                                          # incl. the leakage guard
 python -m src.eval.run --config configs/gbdt.yaml   # reproduces every number above
 python -m src.train --config configs/gbdt.yaml --run-id latest  # trains serving artifacts
-ADRANK_RUN_DIR=models/latest uvicorn src.serve.app:app --reload  # POST /rank
+YIELDGUARD_RUN_DIR=models/latest uvicorn src.serve.app:app --reload  # POST /rank
 ```
 
 CI (`.github/workflows/ci.yml`) runs the test suite plus the eval pipeline
