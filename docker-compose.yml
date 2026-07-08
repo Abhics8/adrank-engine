@@ -1,0 +1,9 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - ADRANK_RUN_DIR=/app/models/latest
+    volumes:
+      - ./models:/app/models:ro

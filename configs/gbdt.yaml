@@ -1,0 +1,8 @@
+seed: 42
+data:
+  days: 10
+  rows_per_day: 60000
+two_tower:
+  enabled: true
+  epochs: 5
+  retrieve_k: 200
