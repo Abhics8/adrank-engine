@@ -4,6 +4,6 @@ __pycache__/
 venv/
 *.egg-info/
 data/*.parquet
-models/
+/models/
 .pytest_cache/
 .DS_Store
